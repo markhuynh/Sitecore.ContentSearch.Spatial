@@ -5,7 +5,7 @@ using System.Web;
 using Sitecore.ContentSearch.Spatial.Indexing;
 using Lucene.Net.Analysis;
 using Lucene.Net.Search;
-using Sitecore.ContentSearch.Abstractions;
+using Sitecore.Abstractions;
 using Sitecore.ContentSearch.Diagnostics;
 using Sitecore.ContentSearch.Linq.Common;
 using Sitecore.ContentSearch.LuceneProvider;
@@ -23,8 +23,8 @@ namespace Sitecore.ContentSearch.Spatial.Provider.Lucene
         private  IContentSearchConfigurationSettings settings;
 
 
-        protected LuceneSearchWithSpatialContext(ILuceneProviderIndex index, CreateSearcherOption options = CreateSearcherOption.Writeable, SearchSecurityOptions securityOptions = SearchSecurityOptions.EnableSecurityCheck)
-            :base(index,options,securityOptions)
+        protected LuceneSearchWithSpatialContext(ILuceneProviderIndex index, IEnumerable<ILuceneProviderSearchable> searchables, LuceneIndexAccess indexAccess = LuceneIndexAccess.ReadOnly | LuceneIndexAccess.ReadOnlyCached, SearchSecurityOptions securityOptions = SearchSecurityOptions.Default)
+            :base(index,searchables,securityOptions)
         {
             Assert.ArgumentNotNull(index, "index");
             this.index = index;
@@ -33,6 +33,16 @@ namespace Sitecore.ContentSearch.Spatial.Provider.Lucene
 
         public LuceneSearchWithSpatialContext(ILuceneProviderIndex index, SearchSecurityOptions securityOptions = SearchSecurityOptions.EnableSecurityCheck)
             :base(index,securityOptions)
+        {
+            Assert.ArgumentNotNull(index, "index");
+            this.index = index;
+            this.settings = this.index.Locator.GetInstance<IContentSearchConfigurationSettings>();
+        }
+
+        public LuceneSearchWithSpatialContext(ILuceneProviderIndex index,
+            IEnumerable<ILuceneProviderSearchable> searchables,
+            SearchSecurityOptions securityOptions = SearchSecurityOptions.Default)
+            :base(index, searchables, securityOptions) 
         {
             Assert.ArgumentNotNull(index, "index");
             this.index = index;

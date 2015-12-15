@@ -44,7 +44,11 @@ namespace Sitecore.ContentSearch.Spatial.Indexing
                 AddPoint(item).ForEach(i => base.CollectedFields.Enqueue(i));
             }
             //Integration Geo Location data type
-            else if (item.Template.ID.Equals(ID.Parse(Sitecore.ContentSearch.Spatial.Common.Constants.GeoLocationTemplateId)) || item.Template.BaseTemplates.Where(i => i.ID.Equals(ID.Parse(Sitecore.ContentSearch.Spatial.Common.Constants.GeoLocationTemplateId))).Any())
+            else if (
+                item.Template != null &&
+                (item.Template.ID.Equals(ID.Parse(Sitecore.ContentSearch.Spatial.Common.Constants.GeoLocationTemplateId)) 
+                || item.Template.BaseTemplates.Any(i => i.ID.Equals(ID.Parse(Common.Constants.GeoLocationTemplateId))))
+                )
             {
                 var geoLocationValue = item[Sitecore.ContentSearch.Spatial.Common.Constants.GeoLocationFieldName];
                 if(!string.IsNullOrWhiteSpace(geoLocationValue) && geoLocationValue.IndexOf(',')>=0)

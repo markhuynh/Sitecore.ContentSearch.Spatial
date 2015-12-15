@@ -17,3 +17,8 @@ Source/Sitecore.ContentSearch.Spatial/bin/Sitecore.ContentSearch.dll
 Source/Sitecore.ContentSearch.Spatial/bin/Sitecore.ContentSearch.Linq.dll
 Source/Sitecore.ContentSearch.Spatial/bin/Sitecore.ContentSearch.LuceneProvider.dll
 Source/Sitecore.ContentSearch.Spatial.v12.suo
+Source/Libs/
+Source/Sitecore.ContentSearch.Spatial.DataTypes/obj/
+Source/Sitecore.ContentSearch.Spatial/bin/
+Source/Sitecore.ContentSearch.Spatial/obj/
+Source/Sitecore.ContentSearch.Spatial.DataTypes/bin/

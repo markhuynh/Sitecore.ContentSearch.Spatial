@@ -38,23 +38,26 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SharedLibrary\Lucene.Net.Contrib.Spatial.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Abstractions">
+      <HintPath>..\Libs\Sitecore\Sitecore.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch">
-      <HintPath>bin\Sitecore.ContentSearch.dll</HintPath>
+      <HintPath>..\Libs\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq">
-      <HintPath>bin\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <HintPath>..\Libs\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq.Lucene">
-      <HintPath>bin\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
+      <HintPath>..\Libs\Sitecore\Sitecore.ContentSearch.Linq.Lucene.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.LuceneProvider">
-      <HintPath>bin\Sitecore.ContentSearch.LuceneProvider.dll</HintPath>
+      <HintPath>..\Libs\Sitecore\Sitecore.ContentSearch.LuceneProvider.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>bin\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\Libs\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Logging">
-      <HintPath>bin\Sitecore.Logging.dll</HintPath>
+      <HintPath>..\Libs\Sitecore\Sitecore.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Spatial4n.Core, Version=0.3.0.0, Culture=neutral, PublicKeyToken=9f9456e1ca16d45e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
